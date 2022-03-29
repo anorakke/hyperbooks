@@ -1,0 +1,230 @@
+* {
+  font-family: Avenir LT Pro;
+}
+
+body {
+  background-color: black;
+}
+
+hr{
+    height:2px;
+    border-width:0;
+    color:gray;
+    margin: 40px 0px 10px 40px;
+    background-color:gray;
+}
+
+.navbar,
+.navbar-collapse {
+  flex-direction: column;
+}
+
+
+.navbar-expand-lg .navbar-nav {
+  flex-direction: column;
+}
+
+
+
+@media (min-width: 992px) {
+  .navbar {
+    width: 15%;
+    height: 100vh;
+  }
+  form input {
+    margin-bottom: 0.7em;
+  }
+}
+.navbar-brand {
+  margin: auto;
+  font-size: 30px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+  border-bottom: 4px solid #018afd;
+  font-family: "95 Black Oblique", Avenir LT Pro;
+  font-weight: bold;
+}
+.navbar {
+  align-items: flex-start;
+  background-color: #1e1e1e;
+}
+
+.nav-item {
+  margin-top: 30px;
+}
+
+.main {
+  display: flex;
+}
+
+.dashboard{
+  width:80%;
+  margin-left:500px;
+}
+
+.heading_bar {
+  background-color: #171717;
+  width: 100%;
+  height: 20%;
+}
+
+.heading_bar h1 {
+  padding: 20px 0px 20px 40px;
+}
+
+.icon-group {
+  display: flex;
+  margin: auto;
+  width: 80%;
+}
+
+.icon-group .icon {
+  margin-top: 10px;
+  border: 2px solid #171717;
+  border-radius: 25px;
+  padding:40px 10px 10px 10px;
+  text-align: center;
+  background: grey;
+}
+
+.icon-group .icon h1{
+  font-size: 36px;
+  color:black;
+}
+
+
+.charts {
+  width: 70%;
+  color: white;
+  position: absolute;
+  top: 200px;
+  left:550px;
+}
+
+.charts .table {
+  color: white;
+}
+
+form {
+  padding: 60px;
+  width: 50%;
+  margin: auto;
+  background: grey;
+  color: black;
+}
+
+.ledger {
+  width: 40%;
+  color: white;
+  position: absolute;
+  top: 200px;
+  left:550px;
+}
+.ledger .table {
+  text-align: center;
+}
+.ledger .table .credit-ele {
+  border-left: solid 2px grey;
+}
+
+.general_journal,
+.trial_balance {
+  margin: auto;
+  width: 70%;
+}
+
+.fin_statement-item {
+  display: flex;
+}
+
+#btnStart {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#message {
+  width: 200px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  margin: auto;
+  text-align: center;
+  display: none;
+}
+
+.icon-button:hover {
+  text-decoration: none;
+  color: goldenrod;
+}
+
+.gen_rows {
+  display: flex;
+}
+
+.page-heading{
+  font-weight: bold;
+  color:white;
+  position:absolute;
+  margin:50px 0px 0px 120px;
+}
+
+.page-heading-tb{
+  font-weight: bold;
+  color:white;
+  margin:auto;
+  text-align: center;
+}
+
+.general_journal .form-row{
+    margin:auto;
+    margin-right:20px;
+}
+
+.general_journal #name{
+    width:200px;
+    margin-left:0px;
+    margin-right:40px;
+}
+.general_journal #debit,
+.general_journal #credit{
+    width:180px;
+}
+
+.general_journal .buttons{
+    display:flex;
+    margin:20px 0px 20px 20px;
+
+}
+
+.general_journal #row-add{
+    margin-left:20px;
+}
+
+.general_journal .gen_rows{
+    margin-top:10px;
+}
+
+.ledger .ledger-ele,
+.trial_balance .trial-ele{
+  color:grey;
+}
+
+.trial_balance .trial-ele-h
+{
+  color:white;
+}
+
+.trial_balance .trial-ele-d{
+  color:white;
+  margin:auto;
+  text-align: center;
+  margin-bottom:20px;
+}
+
