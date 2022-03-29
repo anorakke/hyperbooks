@@ -1,0 +1,61 @@
+{%extends "index.htm"%} {% block body%}
+
+<form method="post" action="/createchartaccount">
+  {% csrf_token %}
+  <div class="form-group">
+    <input
+      type="name"
+      class="form-control"
+      id="name"
+      name="name"
+      placeholder="Account Name"
+    />
+  </div>
+
+  <div class="form-group">
+    <select
+      class="form-control"
+      aria-label=".form-select-lg example"
+      id="typeA"
+      name="typeA"
+    >
+      <option selected>Account Type</option>
+      <option value="current_asset">Current Asset</option>
+      <option value="fixed_asset">Fixed Asset</option>
+      <option value="current_liability">Current Liability</option>
+      <option value="noncurrent_liability">Non-Current Liability</option>
+      <option value="earned_revenue">Earned Revenue</option>
+      <option value="unearned_revenue">Unearned Revenue</option>
+      <option value="equity">Equity</option>
+      <option value="expense">Expense</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <input
+      type="number"
+      class="form-control"
+      id="balance"
+      name="balance"
+      placeholder="Balance"
+    />
+  </div>
+
+  <div class="form-group">
+    <textarea
+      class="form-control"
+      id="desc"
+      name="desc"
+      rows="3"
+      placeholder="Description (optional)"
+    ></textarea>
+  </div>
+
+  <button class="form-group">Save and Update</button>
+
+  <div class="form-group">
+    <a href="/chartofaccounts">Cancel</a>
+  </div>
+</form>
+
+{% endblock body%}

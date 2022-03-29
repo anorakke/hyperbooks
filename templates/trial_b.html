@@ -1,0 +1,86 @@
+{%extends "index.htm"%} {% block body%}
+<div class="trial_balance">
+  <h1 class = "page-heading-tb">ABC Corp</h1>
+  <h1 class="page-heading-tb">Trial Balance</h1>
+
+  <div class = "trial-ele-d">
+  {{date}} 
+  </div>
+
+  
+  {% if emptiness == False %}
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col" class = "trial-ele-h">Name</th>
+        <th scope="col" class = "trial-ele-h">Debit</th>
+        <th scope="col" class = "trial-ele-h">Credit</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {%for account in currentAssets%}
+      <tr>
+        <th scope="col" class = "trial-ele">{{account.name}}</th>
+        <th scope="col" class = "trial-ele">{{account.balance}}</th>
+        <th scope="col"></th>
+      </tr>
+      {%endfor%} {%for account in fixedAssets%}
+      <tr>
+        <th scope="col" class = "trial-ele">{{account.name}}</th>
+        <th scope="col" class = "trial-ele">{{account.balance}}</th>
+        <th scope="col"></th>
+      </tr>
+      {%endfor%} {%for account in currentLiabilities%}
+      <tr>
+        <th scope="col" class = "trial-ele">{{account.name}}</th>
+        <th scope="col"></th>
+        <th scope="col" class = "trial-ele">{{account.balance}}</th>
+      </tr>
+      {%endfor%} {%for account in noncurrentLiabilities%}
+      <tr>
+        <th scope="col" class = "trial-ele">{{account.name}}</th>
+        <th scope="col"></th>
+        <th scope="col" class = "trial-ele">{{account.balance}}</th>
+      </tr>
+      {%endfor%} {%for account in earnedRevenues%}
+      <tr>
+        <th scope="col" class = "trial-ele">{{account.name}}</th>
+        <th scope="col"></th>
+        <th scope="col" class = "trial-ele">{{account.balance}}</th>
+      </tr>
+      {%endfor%} {%for account in unearnedRevenues%}
+      <tr>
+        <th scope="col" class = "trial-ele">{{account.name}}</th>
+        <th scope="col"></th>
+        <th scope="col" class = "trial-ele">{{account.balance}}</th>
+      </tr>
+      {%endfor%} {%for account in equitys%}
+      <tr>
+        <th scope="col" class = "trial-ele">{{account.name}}</th>
+        <th scope="col"></th>
+        <th scope="col" class = "trial-ele">{{account.balance}}</th>
+      </tr>
+      {%endfor%} {%for account in expenses%}
+      <tr>
+        <th scope="col" class = "trial-ele">{{account.name}}</th>
+        <th scope="col" class = "trial-ele">{{account.balance}}</th>
+        <th scope="col"></th>
+      </tr>
+      {%endfor%}
+      <tr>
+        <th scope="col" class = "trial-ele">TOTAL</th>
+        <th scope="col" class = "trial-ele">{{debitEnding}}</th>
+        <th scope="col" class = "trial-ele">{{creditEnding}}</th>
+      </tr>
+    </tbody>
+  </table>
+
+  {%else%}
+
+  <p>Create an Account in the Chart of Account to view the Trial Balance.</p>
+
+  {% endif %}
+</div>
+{% endblock body%}

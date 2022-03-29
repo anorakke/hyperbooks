@@ -1,0 +1,21 @@
+{%extends "index.htm"%} {% block body%}
+
+<div class="fin_statement icon-group">
+  <div class="fin_statement-item">
+    <a href="/balancesheet"   class = "icon-group">
+      <div class = "icon">
+        <h1>Balance Sheet</h1>
+      </div>
+    </a>
+
+    <div class="fin_statement-item">
+      <a href="/incomestatement" class = "icon-group">
+        <div class = "icon">
+          <h1>Income Statement</h1>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+{% block statement%} {% endblock statement %} {% endblock body%}

@@ -1,0 +1,59 @@
+{%extends "index.htm"%} {% block body%}
+
+<h1 class="page-heading">Ledgers</h1>
+
+<hr>
+
+<div class="ledger">
+  {%if dbnames%} 
+    {%for accountheading in dbnamesending%} 
+        {%if accountheading.transmade == 1%}
+            <h2 style = "text-align:center">{{accountheading.name}}</h2>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col" class = "ledger-ele">Date</th>
+                    <th scope="col" class = "ledger-ele">Debit</th>
+                    <th scope="col" class="credit-ele ledger-ele" >Date</th>
+                    <th scope="col" class = "ledger-ele">Credit</th>
+                </tr>
+                </thead>
+
+                <tbody>
+
+                {%for account in dbnames%}
+                    {%if accountheading.name == account.name%} 
+                        {%if account.credit == 0%}
+
+                            <tr>
+                                <th scope="col" class = "ledger-ele">{{account.date}}</th>
+                                <th scope="col" class = "ledger-ele">{{account.debit}}</th>
+                                <th scope="col" class="credit-ele ledger-ele"></th>
+                                <th scope="col"></th>
+                            </tr>
+
+                        {%else%}
+
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col" class="credit-ele ledger-ele" >{{account.date}}</th>
+                                <th scope="col" class = "ledger-ele">{{account.credit}}</th>
+                            </tr>
+
+                        {%endif%} 
+                    {%endif%} 
+                {%endfor%}
+
+                </tbody>
+            </table>
+        {%endif%}
+    {%endfor%}
+
+  {%else%}
+  <p>Create an account in chart of accounts to see ledgers.</p>
+
+  {%endif%}
+</div>
+
+{% endblock body%}

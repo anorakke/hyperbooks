@@ -1,0 +1,31 @@
+{%extends "index.htm"%} {% block body%}
+<div class="charts">
+
+  <h1 class="page-heading">Chart of Accounts</h1>
+  <hr>
+
+  <a href="/createchartaccount"><button>+Create</button></a>
+
+  {% if dbnames%} 
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Type</th>
+        <th scope="col">Balance</th>
+      </tr>
+
+      {% for account in dbnames%}
+      <tr>
+        <th scope="col">{{account.name}}</th>
+        <th scope="col">{{account.typeA}}</th>
+        <th scope="col">{{account.balance}}</th>
+      </tr>
+      {% endfor %} {% else %}
+      <p>No Accounts found. </p>
+      {%endif%}
+    </thead>
+  </table>
+</div>
+
+{% endblock body%}

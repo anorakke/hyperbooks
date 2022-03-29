@@ -1,0 +1,30 @@
+{%extends "index.htm"%} {% block body%}
+
+<div class ="dashboard">
+  <h1 class="page-heading">Dashboard</h1>
+
+  <hr>
+
+  <p style = "color:white; font-size:18px; margin: 30px 0px 25px 110px;"> Welcome, [Company_name]!</p>
+
+  <div class="icon-group">
+    <a href="/createchartaccount" class="icon-button">
+      <div class="icon">
+        <h1>Create an Account</h1>
+      </div>
+    </a>
+
+    <a href="/generaljournal" class="icon-button">
+      <div class="icon">
+        <h1>Make a Journal Entry</h1>
+      </div>
+    </a>
+
+    <a href="/financialstatements" class="icon-button">
+      <div class="icon">
+        <h1>View Financial Statements</h1>
+      </div>
+    </a>
+  </div>
+</div>
+{% endblock body%}

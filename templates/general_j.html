@@ -1,0 +1,59 @@
+{%extends "index.htm"%} {% block body%}
+
+
+
+  <form class="general_journal" action={% url 'generaljournal' %} method="POST">
+    {% csrf_token %}
+    <div class = "gen_form">
+      
+      <div class = "gen_rows">
+        
+        <div class="form-group form-row">
+          <select
+            class="form-control"
+            aria-label=".form-select-lg example"
+            id="name"
+            name="name0">
+
+            <option selected>Account Type</option>
+
+            {%if dbnames%}
+              {%for account in dbnames%}
+                <option value = "{{account}}">{{account}}</option>
+              {%endfor%}
+            {%endif%}
+          </div>
+
+
+          <div class="form-group form-row">
+            <input type="number" class="form-control" id="debit" name="debit0" placeholder = "Debit"/>
+          </div>
+
+          <div class="form-group form-row">
+            <input type="number" class="form-control" id="credit" name="credit0" placeholder = "Credit"/>
+          </div>
+
+          <div class="form-group form-row">
+            <textarea
+              class="form-control"
+              id="desc"
+              name="desc0"
+              rows="1"
+              placeholder = "description (optional)"
+            ></textarea>
+          </div>
+      </div>
+
+    </div>
+
+
+    <button class="form-group">Save and Update</button>
+
+      <div class="form-group">
+        <div id="row-add">Add Row</div>
+      </div>
+      
+  </form>
+
+
+{% endblock body%}
